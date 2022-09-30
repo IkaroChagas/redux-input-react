@@ -4,7 +4,7 @@ const inputInfo = createSlice({
     name: 'user',
     initialState: {
         name: '',
-        age: 0
+        age: ''
     },
     reducers: {
         setName: (state, action) => {
