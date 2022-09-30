@@ -10,25 +10,29 @@ export const Global = () => {
     const user = useAppSelector(state => state.user)
 
     const changeName = (newName: string) => dispatch(setName(newName))
-    const changeAge = (newAge: number) => dispatch(setAge(newAge))
-
+    const changeAge = (newAge: any) => dispatch(setAge(newAge))
 
     const handleChangeName = (e: React.ChangeEvent<HTMLInputElement>) => {
         changeName(e.target.value)
     }
 
     const handleChangeAge = (e: React.ChangeEvent<HTMLInputElement>) => {
-        changeAge(parseInt(e.target.value))
+        const value = e.target.value ? Number(e.target.value) : null;
+        if (!value) {
+            changeAge(value)
+        } else {
+            if (value > 0 && value < 130) {
+                changeAge(value)
+            }
+        }
     }
 
-
     return (
-
         <C.Container>
-            Meu nome é: {user.name} e tenho {user.age} anos <br />
-            <br />
+            <h2>Estado global (Redux)</h2>
+            <C.p>Nome: {user.name}</C.p>
             <C.input type="text" value={user.name} placeholder={'Digite um nome'} onChange={handleChangeName} />
-            <br />
+            <C.p>Idade: {user.age}</C.p>
             <C.input type="number" value={user.age} placeholder={'Digite uma idade'} onChange={handleChangeAge} />
         </C.Container>
     );

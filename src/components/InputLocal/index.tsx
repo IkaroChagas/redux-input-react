@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import * as C from './styles'
 
 export const Local = () => {
@@ -11,14 +11,22 @@ export const Local = () => {
     }
 
     const handleChangeAge = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setAge(e.target.value)
+        const value = e.target.value ? Number(e.target.value) : null;
+        if (!value) {
+            setAge(e.target.value);
+        } else {
+            if (value > 0 && value < 130) {
+                setAge(e.target.value);
+            }
+        }
     }
 
     return (
         <C.Container>
-            <p>Meu nome é: {name}</p>
+            <h2>Estado local</h2>
+            <C.p>Nome: {name}</C.p>
             <C.input type="text" value={name} placeholder={'Digite um nome'} onChange={handleChangeName} />
-            <p>E tenho: {age} anos</p>
+            <C.p>Idade: {age}</C.p>
             <C.input type="number" value={age} placeholder={'Digite uma idade'} onChange={handleChangeAge} />
         </C.Container>
     );
