@@ -7,7 +7,7 @@ export const Container = styled.div`
     margin: auto;
     align-items: center;
     justify-content: center;
-    margin-top: 70px;
+    margin-top: 10px;
 `;
 
 export const input = styled.input`
