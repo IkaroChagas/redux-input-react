@@ -1,9 +1,12 @@
-## Para instalar :
+# Deploy:
+https://redux-input-react.vercel.app/
+
+## Para instalar:
 
 ## npm install
 
 <br/>
 
-## Para rodar :
+## Para rodar:
 
 ## npm start
