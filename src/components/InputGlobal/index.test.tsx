@@ -1,11 +1,18 @@
 import { Global } from ".";
-import {render, screen} from  '@testing-library/react'
+import {render as ComponentRender, screen} from  '@testing-library/react'
+import { Provider } from 'react-redux'
+import { Store } from "../../redux/store";
+
 
 it('should have a input', () => {
-    render(<Global />)
 
-    let input = screen.getByPlaceholderText('...Digite')
-    expect(input).toHaveFormValues
+    const render = ComponentRender (
+    <Provider store={Store}>
+        <Global />
+    </Provider>
+)
+    let input = screen.getAllByText('')
+    expect(render).toHaveDisplayValue('')
 })
 
 export {}
