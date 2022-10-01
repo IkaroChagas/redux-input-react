@@ -3,6 +3,7 @@ import { Local } from './components/InputLocal';
 import { Global } from './components/InputGlobal';
 import reduxlogo from './images/redux.png'
 
+
 function App() {
 
   return (
