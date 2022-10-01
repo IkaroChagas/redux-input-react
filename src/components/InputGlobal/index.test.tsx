@@ -4,7 +4,7 @@ import {render, screen} from  '@testing-library/react'
 it('should have a input', () => {
     render(<Global />)
 
-    let input = screen.getAllByDisplayValue('Ikaro')
+    let input = screen.getByPlaceholderText('...Digite')
     expect(input).toHaveFormValues
 })
 

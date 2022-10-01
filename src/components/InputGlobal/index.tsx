@@ -4,6 +4,7 @@ import { useAppSelector } from '../../redux/hooks/useAppSelector'
 import { setAge, setName } from '../../redux/reducers/userReducer';
 import * as C from './styles'
 
+
 export const Global = () => {
     const dispatch = useDispatch()
 
